@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
+            margin: 0;
+            padding: 0;
+            transition: all 0.3s ease;
+        }
+
+        #container {
+            text-align: center;
+            padding: 50px;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .default-theme {
+            font-size: 16px;
+            background-color: white;
+        }
+
+        .boy-theme {
+            background-color: blue;
+            color: darkred;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+        .boy-theme img {
+            max-width: 200px;
+            max-height: 200px;
+            display: block;
+            margin: 20px auto;
+        }
+
+        .girl-theme {
+            background-color: pink;
+            color: purple;
+            font-family: cursive;
+            text-align: center;
+        }
+        .girl-theme img {
+            max-width: 200px;
+            max-height: 200px;
+            display: block;
+            margin: 20px auto;
+        }
+
+        .old-theme {
+            background-color: grey;
+            color: brown;
+            font-family: 'Rocky', sans-serif;
+            font-size: 24px;
+            text-align: center;
+            background-color: white;
+            padding: 10px;
+        }
+        .old-theme img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="default-theme">
+
+    <div id="container">
+        <h1>Welcome! each button represents a theme</h1>
+        <button onclick="changeTheme('boy')">Boy Theme</button>
+        <button onclick="changeTheme('girl')">Girl Theme</button>
+        <button onclick="changeTheme('old')">Old Theme</button>
+    </div>
+
+    <div id="image-container">
+        <img id="theme-image" src=""/>
+    </div>
+
+    <script>
+        function changeTheme(theme) {
+            document.body.className = ''; 
+
+            const imageContainer = document.getElementById('image-container');
+            const themeImage = document.getElementById('theme-image');
+            themeImage.src = '';
+
+            if (theme === 'boy') {
+                document.body.classList.add('boy-theme');
+                themeImage.src = 'images/download.jpg';
+            } else if (theme === 'girl') {
+                document.body.classList.add('girl-theme');
+                themeImage.src = 'images/girl.jpg';
+            } else if (theme === 'old') {
+                document.body.classList.add('old-theme');
+                themeImage.src = 'images/meme.jpg';
+            }
+        }
+    </script>
+
+</body>
+</html>
